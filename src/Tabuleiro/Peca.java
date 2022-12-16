@@ -2,12 +2,12 @@ package Tabuleiro;
 
 public class Peca {
 	
-	protected Posicao posi;
+	protected Posicao pos;
 	private Tabuleiro tab;
 	
 	public Peca(Tabuleiro tab) {
 		this.tab = tab;
-		posi = null;
+		pos = null;
 	}
 
 	protected Tabuleiro getTab() {
