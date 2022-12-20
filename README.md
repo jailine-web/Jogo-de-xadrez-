@@ -1,8 +1,8 @@
 <h1> Jogo de xadrez</h1>
 
-Jogo de xadrez desenvolvido com a linguagem de programação Java
+♛ Jogo de xadrez desenvolvido com a linguagem de programação Java
 
-📝 Executar o terminal para visualizar as cores das peças no terminal:
+➡️ Executar o terminal para visualizar as cores das peças no terminal:
 
 📝 1° Navegue até a pasta bin do projeto
 📝 2° Clique com o botão direito
