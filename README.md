@@ -1,6 +1,6 @@
 <h1> Jogo de xadrez</h1>
 
-♛ Jogo de xadrez desenvolvido com a linguagem de programação Java
+♛ <h2> Jogo de xadrez desenvolvido com a linguagem de programação Java</h2>
 
 ➡️ Executar o terminal para visualizar as cores das peças no terminal:
 
