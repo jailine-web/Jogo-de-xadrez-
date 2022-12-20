@@ -45,7 +45,7 @@ public class Tabuleiro {
 		peca.pos = posicao;
 	}
 	
-	//Método auxiliar
+	//Método auxiliar 
 	private boolean posicaoExistente(int linha, int coluna) {
 		return linha >= 0 && linha < getLinhas() && coluna >= 0 && coluna < getColunas();
 	}
