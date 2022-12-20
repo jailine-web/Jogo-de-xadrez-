@@ -28,8 +28,8 @@ public class PartidaXadrez {
 	}
 	
 	private void IniciarPartida() {
-		tabuleiro.InsercaoPeca(new Torre(tabuleiro, Cor.WHITE), new Posicao(2, 1));
-		tabuleiro.InsercaoPeca(new Rei(tabuleiro, Cor.BLACK), new Posicao(0, 4));
+		tabuleiro.InsercaoPeca(new Torre(tabuleiro, Cor.WHITE), new Posicao(0, 1));
+		tabuleiro.InsercaoPeca(new Rei(tabuleiro, Cor.BLACK), new Posicao(6, 3));
 		tabuleiro.InsercaoPeca(new Rei(tabuleiro, Cor.WHITE), new Posicao(7, 3));
 		
 	}
