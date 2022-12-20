@@ -2,7 +2,7 @@
 
 <h2> ♛ Jogo de xadrez desenvolvido com a linguagem de programação Java</h2>
 
-➡️ Executar o terminal para visualizar as cores das peças no terminal:
+➡️ Executar o terminal para visualizar as cores das peças no git bash:
 
 📝 1° Navegue até a pasta bin do projeto
 📝 2° Clique com o botão direito
