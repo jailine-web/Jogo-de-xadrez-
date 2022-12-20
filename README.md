@@ -1,4 +1,4 @@
-#Jogo de xadrez
+<h1> Jogo de xadrez</h1>
 
 Jogo de xadrez desenvolvido com a linguagem de programação Java
 
