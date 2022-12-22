@@ -47,7 +47,7 @@ public class Tabuleiro {
 	
 	public Peca removePeca(Posicao posicao) {
 		if(!posicaoExistente(posicao)) {
-			throw new TabuleiroExcecao("Não existe a esta posição no tabuleiro:");
+			throw new TabuleiroExcecao("Não existe esta posição de destino no tabuleiro:");
 		}
 		if(peca(posicao) == null) {
 			return null;
