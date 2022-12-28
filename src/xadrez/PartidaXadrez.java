@@ -32,6 +32,7 @@ public class PartidaXadrez {
 		Posicao origem = posicaoOrigem.ConversaoPosicoes();
 		Posicao destino = posicaoDestino.ConversaoPosicoes();
 		validarPosicaoOrigem(origem);
+		validarPosicaoDestino(origem, destino);
 		Peca pecaCapturada = fazerMover(origem, destino);
 		return (PecaXadrez)pecaCapturada;
 	}
@@ -50,6 +51,12 @@ public class PartidaXadrez {
 		if(!tabuleiro.peca(posic).haMovimentosPossiveis()) {
 			throw new TabuleiroExcecao("Não existe movimentos possíveis para a peça escolhida");
 					
+		}
+	}
+	
+	private void validarPosicaoDestino(Posicao origem, Posicao destino){
+		if(!tabuleiro.peca(origem).movimentoPossivel(destino)) {
+			throw new TabuleiroExcecao("A peça escolhida na origem não pode ser movida para a posição de destino!");
 		}
 	}
 	

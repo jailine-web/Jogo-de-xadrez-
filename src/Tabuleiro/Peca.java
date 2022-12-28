@@ -24,7 +24,7 @@ public abstract class Peca {
 		boolean[][] mat = movimentosPossiveis();
 		for(int i =0; i<mat.length; i++) {
 			for(int j = 0; j< mat.length; j++) {
-				//Existe um movimento possível
+				//Verificando a existencia de movimentos possíveis
 				if (mat[i][j]) {
 					return true;
 				}
