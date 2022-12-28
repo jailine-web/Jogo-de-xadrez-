@@ -28,6 +28,12 @@ public class PartidaXadrez {
 		return mat;
 	}
 	
+	public boolean [][] movimentosPossiveis(PosicaoXadrez PosicaoOrigem){
+		Posicao posicao = PosicaoOrigem.ConversaoPosicoes();//toPosition()
+		validarPosicaoOrigem(posicao);
+		return tabuleiro.peca(posicao).movimentosPossiveis();
+	}
+	
 	public PecaXadrez movendoPeca(PosicaoXadrez posicaoOrigem, PosicaoXadrez posicaoDestino){
 		Posicao origem = posicaoOrigem.ConversaoPosicoes();
 		Posicao destino = posicaoDestino.ConversaoPosicoes();

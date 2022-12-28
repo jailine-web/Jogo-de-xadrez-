@@ -27,6 +27,10 @@ public class Principal {
 				System.out.print("Origem: ");
 				PosicaoXadrez origem = UI.lerPosicaoxadrez(ler);
 				
+				boolean[][] movimentosPossiveis = px.movimentosPossiveis(origem);
+				UI.limparTela();
+				UI.printTabuleiro(px.getPecas(), movimentosPossiveis);
+				
 				System.out.println();
 				System.out.print("Destino: ");
 				PosicaoXadrez destino = UI.lerPosicaoxadrez(ler); 
