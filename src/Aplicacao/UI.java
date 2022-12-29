@@ -71,12 +71,12 @@ public class UI {
 			}
 			System.out.println();
 		}
-		System.out.println("  a b c d e f g h ");
+		System.out.println("  a b c d e f g h");
 	}
 	
 	private static void printPeca(PecaXadrez peca, boolean corFundo) {
 		if(corFundo) {
-			System.out.println(ANSI_BLUE_BACKGROUND);
+			System.out.print(ANSI_BLUE_BACKGROUND);
 		}
 		if (peca == null) {
 			System.out.print("-"+ ANSI_RESET);
