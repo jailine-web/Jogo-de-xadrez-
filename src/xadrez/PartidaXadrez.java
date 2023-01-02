@@ -1,5 +1,7 @@
 package xadrez;
 
+import java.awt.Color;
+
 import Tabuleiro.Peca;
 import Tabuleiro.Posicao;
 import Tabuleiro.Tabuleiro;
@@ -11,11 +13,23 @@ public class PartidaXadrez {
 
 	//O coração do sistema de xadrez
 	
+	private int direcao;
 	private Tabuleiro tabuleiro;
+	private Cor jogadorAtual;
 
 	public PartidaXadrez() {
 		tabuleiro = new Tabuleiro(8, 8);
+		direcao = 1;
+		jogadorAtual = Cor.WHITE;
 		IniciarPartida();
+	}
+	
+	public int getDirecao() {
+		return direcao;
+	}
+	
+	public Cor jogadorAtual() {
+		return jogadorAtual;
 	}
 	
 	public PecaXadrez[][] getPecas(){
@@ -40,6 +54,7 @@ public class PartidaXadrez {
 		validarPosicaoOrigem(origem);
 		validarPosicaoDestino(origem, destino);
 		Peca pecaCapturada = fazerMover(origem, destino);
+		proximaDirecao();
 		return (PecaXadrez)pecaCapturada;
 	}
 	
@@ -54,6 +69,9 @@ public class PartidaXadrez {
 		if(!tabuleiro.temPecas(posic)) {
 			throw new TabuleiroExcecao("Não há peca na posição de origem! ");
 		}
+		if(jogadorAtual != ((PecaXadrez)tabuleiro.peca(posic)).getCor()) {
+			throw new TabuleiroExcecao("A peça escolhida não é sua");
+		}
 		if(!tabuleiro.peca(posic).haMovimentosPossiveis()) {
 			throw new TabuleiroExcecao("Não existe movimentos possíveis para a peça escolhida");
 					
@@ -64,6 +82,11 @@ public class PartidaXadrez {
 		if(!tabuleiro.peca(origem).movimentoPossivel(destino)) {
 			throw new TabuleiroExcecao("A peça escolhida na origem não pode ser movida para a posição de destino!");
 		}
+	}
+	
+	private void proximaDirecao() {
+		direcao ++;
+		jogadorAtual = (jogadorAtual == Cor.WHITE) ? Cor.BLACK : Cor.WHITE;
 	}
 	
 	private void novoLugarPeca(char coluna, int linha, PecaXadrez peca) {

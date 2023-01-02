@@ -22,7 +22,7 @@ public class Principal {
 			try {
 				
 				UI.limparTela();
-				UI.printTabuleiro(px.getPecas());
+				UI.printPartida(px);
 				System.out.println();
 				System.out.print("Origem: ");
 				PosicaoXadrez origem = UI.lerPosicaoxadrez(ler);
