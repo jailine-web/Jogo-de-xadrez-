@@ -59,10 +59,17 @@ public class UI {
 		System.out.println();
 		printPecasCapturadas(capturada);
 		System.out.println();
-		System.out.println("Direção: "+ partidaXadrez.getDirecao());
-		System.out.println("Esperand o jogador: "+ partidaXadrez.jogadorAtual());
-		if(partidaXadrez.getVerificaCheck()) {
-			System.out.println("CHECK!");
+		System.out.println("Partida: "+ partidaXadrez.getDirecao());
+		
+		if(!partidaXadrez.getXequeMate()) {
+			System.out.println("Esperand o jogador: "+ partidaXadrez.getJogadorAtual());
+			if(partidaXadrez.getVerificaCheck()) {
+				System.out.println("CHECK!");
+			}
+		}
+		else {
+			System.out.println("XEQUEMATE!");
+			System.out.println("Vencedor: "+ partidaXadrez.getJogadorAtual());
 		}
 	}
 

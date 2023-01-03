@@ -5,8 +5,6 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-import Tabuleiro.Posicao;
-import Tabuleiro.Tabuleiro;
 import Tabuleiro.TabuleiroExcecao;
 import xadrez.PartidaXadrez;
 import xadrez.PecaXadrez;
@@ -21,7 +19,7 @@ public class Principal {
 		List<PecaXadrez> pecasCapturadas = new ArrayList<PecaXadrez>();
 		
 		
-		while(true) {
+		while(!px.getXequeMate()) {
 			try {
 				
 				UI.limparTela();
@@ -55,6 +53,9 @@ public class Principal {
 				ler.nextLine();
 			}
 		}
+		
+		UI.limparTela();
+		UI.printPartida(px, pecasCapturadas);
 		
 	}
 
