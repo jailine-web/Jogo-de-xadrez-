@@ -7,7 +7,8 @@ import Tabuleiro.Tabuleiro;
 public abstract class PecaXadrez extends Peca{
 
 	private Cor cor;
-
+	private int contMove;
+	
 	public PecaXadrez(Tabuleiro tab, Cor cor) {
 		super(tab);
 		this.cor = cor;
@@ -15,6 +16,18 @@ public abstract class PecaXadrez extends Peca{
 
 	public Cor getCor() {
 		return cor;
+	}
+	
+	public int getContMove() {
+		return contMove;
+	}
+	
+	public void incrementaContMover() {
+		contMove ++;
+	}
+	
+	public void decrementaContMover() {
+		contMove --;
 	}
 	
 	public PosicaoXadrez getPosicaoPeca() { 
