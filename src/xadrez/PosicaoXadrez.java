@@ -9,8 +9,7 @@ public class PosicaoXadrez {
 	
 	public PosicaoXadrez(char coluna, int linha) {
 		if (coluna< 'a' || coluna > 'h' || linha < 1 || coluna < 1) {
-			throw new XadrezExcecao
-			("Erro ao iniciar a posição as posições vão de a1 a h8!! ");
+			throw new XadrezExcecao ("Erro ao iniciar a posição as posições vão de a1 a h8!! ");
 		}
 		
 		this.coluna = coluna;
@@ -30,7 +29,7 @@ public class PosicaoXadrez {
 	}
 	
 	protected static PosicaoXadrez posicaoNaMatriz(Posicao posicao) {
-		return new PosicaoXadrez((char) ((char)'a' - posicao.getColuna()) , 8 - posicao.getLinha());				
+		return new PosicaoXadrez((char) ((char)'a' + posicao.getColuna()) , 8 - posicao.getLinha());				
 				
 	}
 
