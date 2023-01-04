@@ -3,12 +3,16 @@ package xadrez.pecas;
 import Tabuleiro.Posicao;
 import Tabuleiro.Tabuleiro;
 import xadrez.Cor;
+import xadrez.PartidaXadrez;
 import xadrez.PecaXadrez;
 
 public class Peao extends PecaXadrez {
 
-	public Peao(Tabuleiro tab, Cor cor) {
+	private PartidaXadrez partidaXadrez;
+	
+	public Peao(Tabuleiro tab, Cor cor, PartidaXadrez partidaXadrez) {
 		super(tab, cor);
+		this.partidaXadrez = partidaXadrez;
 	}
 
 	@Override
@@ -40,7 +44,22 @@ public class Peao extends PecaXadrez {
 			if(getTab().posicaoExistente(p) && haOponeteDaPeca(p)) {
 				matriz[p.getLinha()][p.getColuna()] = true;	
 			}
+			
+			//en passant
+			if(pos.getLinha() == 3) {
+				Posicao esquerda = new Posicao(pos.getLinha(), pos.getColuna() - 1);
+				if(getTab().posicaoExistente(esquerda) && haOponeteDaPeca(esquerda) && getTab().peca(esquerda) == partidaXadrez.getEnPassantVulnerable()) {
+					matriz[esquerda.getLinha() - 1][esquerda.getColuna()] = true;
+				}
+				
+				Posicao direita = new Posicao(pos.getLinha(), pos.getColuna() + 1);
+				if(getTab().posicaoExistente(direita) && haOponeteDaPeca(direita) && getTab().peca(direita) == partidaXadrez.getEnPassantVulnerable()) {
+					matriz[direita.getLinha() - 1][direita.getColuna()] = true;
+				}
+				
+			}
 		}
+		//Peças pretas
 		else {
 			p.setValores(pos.getLinha() + 1, pos.getColuna());
 			//Primeiro movimento possível
@@ -64,6 +83,21 @@ public class Peao extends PecaXadrez {
 			if(getTab().posicaoExistente(p) && haOponeteDaPeca(p)) {
 				matriz[p.getLinha()][p.getColuna()] = true;	
 			}
+			
+			//en passant peças pretas
+			if(pos.getLinha() == 4) {
+				Posicao esquerda = new Posicao(pos.getLinha(), pos.getColuna() - 1);
+				if(getTab().posicaoExistente(esquerda) && haOponeteDaPeca(esquerda) && getTab().peca(esquerda) == partidaXadrez.getEnPassantVulnerable()) {
+					matriz[esquerda.getLinha() + 1][esquerda.getColuna()] = true;
+				}
+				
+				Posicao direita = new Posicao(pos.getLinha(), pos.getColuna() + 1);
+				if(getTab().posicaoExistente(direita) && haOponeteDaPeca(direita) && getTab().peca(direita) == partidaXadrez.getEnPassantVulnerable()) {
+					matriz[direita.getLinha() + 1 ][direita.getColuna()] = true;
+				}
+				
+			}
+			
 		}
 		
 		return matriz;
