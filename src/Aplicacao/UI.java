@@ -82,7 +82,7 @@ public class UI {
 			}
 			System.out.println();
 		}
-		System.out.println(" a b c d e f g h ");
+		System.out.println("  a b c d e f g h ");
 	}
 
 	public static void printTabuleiro(PecaXadrez[][] pecas, boolean[][] movimentosPossiveis) {
@@ -116,7 +116,7 @@ public class UI {
 	private static void printPecasCapturadas(List<PecaXadrez> pecasCapturadas) {
 		List<PecaXadrez> branca = pecasCapturadas.stream().filter(x -> x.getCor() == Cor.WHITE).collect(Collectors.toList()); 
 		List<PecaXadrez> preta = pecasCapturadas.stream().filter(x -> x.getCor() == Cor.BLACK).collect(Collectors.toList()); 
-		System.out.println("Peças capturadas: ");
+		System.out.println("Pecas capturadas: ");
 		System.out.print("Brancas: ");
 		System.out.print(ANSI_WHITE);
 		//Modo de imprimir uma lista de arrays no java

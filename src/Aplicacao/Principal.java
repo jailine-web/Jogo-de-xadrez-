@@ -42,7 +42,11 @@ public class Principal {
 
 				if (px.getPromocao() != null) {
 					System.out.print("Digite a peca a ser promovida (B/C/T/Q): ");
-					String tipo = ler.nextLine();
+					String tipo = ler.nextLine().toUpperCase();
+					while(!tipo.equals("B") && !tipo.equals("C") && !tipo.equals("T") && !tipo.equals("Q")) {
+						System.out.print("Valor inválido, digite a peca a ser promovida (B/C/T/Q): ");
+						tipo = ler.nextLine().toUpperCase();
+					}
 					px.substituirPecaPromovida(tipo);
 			
 				}
