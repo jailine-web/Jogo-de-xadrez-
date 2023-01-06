@@ -17,46 +17,51 @@ public class Principal {
 		Scanner ler = new Scanner(System.in);
 		PartidaXadrez px = new PartidaXadrez();
 		List<PecaXadrez> pecasCapturadas = new ArrayList<PecaXadrez>();
-		
-		
-		while(!px.getXequeMate()) {
+
+		while (!px.getXequeMate()) {
 			try {
-				
+
 				UI.limparTela();
 				UI.printPartida(px, pecasCapturadas);
 				System.out.println();
 				System.out.print("Origem: ");
 				PosicaoXadrez origem = UI.lerPosicaoxadrez(ler);
-				
+
 				boolean[][] movimentosPossiveis = px.movimentosPossiveis(origem);
 				UI.limparTela();
 				UI.printTabuleiro(px.getPecas(), movimentosPossiveis);
-				
 				System.out.println();
 				System.out.print("Destino: ");
-				PosicaoXadrez destino = UI.lerPosicaoxadrez(ler); 
-				
+				PosicaoXadrez destino = UI.lerPosicaoxadrez(ler);
+
 				PecaXadrez pecaCapturada = px.movendoPeca(origem, destino);
-				
-				if(pecaCapturada != null) {
+
+				if (pecaCapturada != null) {
 					pecasCapturadas.add(pecaCapturada);
 				}
-			}
-			catch(TabuleiroExcecao e) {
+
+				if (px.getPromocao() != null) {
+					System.out.print("Digite a peca a ser promovida (B/C/T/Q): ");
+					String tipo = ler.nextLine();
+					px.substituirPecaPromovida(tipo);
+			
+				}
+			} 
+			catch (TabuleiroExcecao e) {
 				System.out.println(e.getMessage());
-				System.out.println("Digite enter para inserir uma nova posição");
+				//System.out.print("Digite enter para inserir uma nova posição");
 				ler.nextLine();
-			}
-			catch(InputMismatchException e) {
+			} 
+			catch (InputMismatchException e) {
 				System.out.println(e.getMessage());
-				System.out.println("Digite enter para inserir uma nova posição");
+				//System.out.println("Digite enter para inserir uma nova posição");
 				ler.nextLine();
 			}
 		}
-		
+
 		UI.limparTela();
 		UI.printPartida(px, pecasCapturadas);
-		
+
 	}
 
 }
