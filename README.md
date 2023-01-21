@@ -8,12 +8,14 @@
  Git 
  Github
 
-➡️ Executar o terminal para visualizar as cores das peças no git bash:
+➡️ Rodar o jogo no terminal git bash:
 
 📝 1° Navegue até a pasta bin do projeto
 📝 2° Clique com o botão direito
 📝 3° Clique no campo "Git bash Here"
 📝 4° Insira o comando: java caminho_do_arquivo_principal
+
+📝 Parar o terminal: ctrl + c
 
 Mover peças:
 
